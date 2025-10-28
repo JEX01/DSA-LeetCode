@@ -9,7 +9,7 @@ public:
                 j++;
             } 
             else if (j > 0 && typed[j] == typed[j - 1]) {
-                j++;
+                j++; 
             } 
             else {
                 return false;
