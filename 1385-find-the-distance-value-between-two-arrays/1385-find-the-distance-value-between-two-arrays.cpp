@@ -9,6 +9,7 @@ public:
                 int dif = abs(arr1[i] - arr2[j]);
                 if( dif <= d){
                     t++;
+                    break;
                 }
             }
             if( t == 0) ans++;
