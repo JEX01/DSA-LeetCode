@@ -7,10 +7,10 @@ public:
                 c++;
             }
         }
+
         if(c==1 && word[0]<='Z' && word[0]>='A') return true;
         if(c==0) return true;
         if(c==word.size()) return true;
         return false;
-        
     }
 };
