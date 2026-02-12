@@ -1,28 +1,24 @@
 class Solution {
 public:
-    vector<int> diStringMatch(string s) {
-        vector<int> arr;
-        int i = -1;
-        int j = s.size() + 1;
-        int r = 0;
-        for( auto c : s){
-        
-        if( c == 'I'  ){
-        
-           arr.push_back(++i);
-        
-        } else {
-
-            arr.push_back(--j);
-
+    vector<int> diStringMatch(string s) 
+    {
+        int i=0;
+        int d=s.size(); 
+        vector<int> ans;
+        for(int j=0;j<s.size();j++)
+        {
+            if(s[j]=='I')
+            {
+                ans.push_back(i);
+                i++;
+            }
+            else
+            {
+                ans.push_back(d);
+                d--;
+            }
         }
-
-        r++;
-
-        }
-        
-        arr.push_back( ++i);
-
-        return arr;
+        ans.push_back(i);
+        return ans;
     }
 };
