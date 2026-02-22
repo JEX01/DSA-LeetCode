@@ -1,12 +1,19 @@
 class Solution {
 public:
-    int binaryGap(unsigned n) {
-        int d=0, p=32;
-        for(; n>0; n&=(n-1)){
-            int ctz=countr_zero(n);
-            d=max(d, ctz-p);
-            p=ctz;
+    int binaryGap(int n) {
+        n >>= __builtin_ctz(n);
+        if (n == 1) return 0;
+        int maxGap = 0, gap = 0;
+
+        while (n) {
+            if (n & 1) {
+                maxGap = max(maxGap, gap);
+                gap = 0;
+            } else
+                gap++;
+            n >>= 1;
         }
-        return d;
+
+        return maxGap + 1;
     }
 };
